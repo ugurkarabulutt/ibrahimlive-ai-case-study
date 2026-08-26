@@ -29,24 +29,27 @@ For that reason, I approached the project primarily as a knowledge and retrieval
 
 At a high level, information moves through the system like this:
 
-Source Corpus  
-↓  
-Ingestion and Processing  
-↓  
-Structured Knowledge  
-↓  
-Embeddings  
-↓  
-PostgreSQL and pgvector  
-↓  
-Semantic Retrieval  
-↓  
-Ranking and Validation  
-↓  
-LLM Answer Generation  
-↓  
-Evaluation and Feedback
+```mermaid
+flowchart TD
+    A[Source Corpus<br/>6,500+ files]
+    B[Ingestion & Processing]
+    C[Structured Knowledge<br/>40,000+ records]
+    D[Embeddings]
+    E[PostgreSQL + pgvector]
+    F[Semantic Retrieval]
+    G[Ranking & Validation]
+    H[LLM Answer Generation]
+    I[Evaluation & Feedback]
 
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+```
 The application is built primarily with Next.js, TypeScript, Supabase, PostgreSQL, pgvector and OpenAI APIs.
 
 ## Data and ingestion
